@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Flocc\Http\Middleware;
 
 use Closure;
 

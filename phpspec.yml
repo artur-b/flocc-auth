@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Flocc
+        psr4_prefix: Flocc
         src_path: app

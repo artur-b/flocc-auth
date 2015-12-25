@@ -41,6 +41,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('auth/postregister', function() {
     return view('auth/postregister');
 });
+Route::get('auth/verify/{code}', 'Auth\AuthController@verifyEmail');
 
 Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');

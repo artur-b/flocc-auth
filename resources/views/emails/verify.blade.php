@@ -8,7 +8,7 @@
  
         <div>
         This is verify e-mail.
-        Please click {{{ URL::to('auth/verify/') . $user['activation_code'] }}}
+        Please click {{{ URL::to('auth/verify') . '/' . $user['activation_code'] }}}
         </div>
     </body>
 </html>

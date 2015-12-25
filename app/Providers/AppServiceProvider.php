@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Flocc\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

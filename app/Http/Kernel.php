@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace Flocc\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,12 +13,12 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \App\Http\Middleware\EncryptCookies::class,
+        \Flocc\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \App\Http\Middleware\VerifyCsrfToken::class,
-        \App\Http\Middleware\SendActivationEmail::class,
+        \Flocc\Http\Middleware\VerifyCsrfToken::class,
+        \Flocc\Http\Middleware\SendActivationEmail::class,
     ];
 
     /**
@@ -27,9 +27,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \Flocc\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'auth.register' => \App\Http\Middleware\SendActivationEmail::class,
+        'guest' => \Flocc\Http\Middleware\RedirectIfAuthenticated::class,
+        'auth.register' => \Flocc\Http\Middleware\SendActivationEmail::class,
     ];
 }

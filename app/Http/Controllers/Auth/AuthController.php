@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Flocc\Http\Controllers\Auth;
 
-use App\User;
+use Flocc\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Flocc\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
@@ -128,7 +128,25 @@ class AuthController extends Controller
             'email' => $facebookUser->email,
             'facebook_id' => $facebookUser->id,
             'activation_code' => 'facebook',
+            'active' => 1,
             //'avatar' => $facebookUser->avatar
         ]);
+    }
+    
+    public function verifyEmail($code)
+    {
+        $verifiedUser = User::where('activation_code', $code)->first();
+        
+        if ($verifiedUser) {
+            $verifiedUser->active = 1;
+            $verifiedUser->save();
+            
+            Auth::login($verifiedUser);
+            
+            return redirect('/');
+
+        }
+        
+        return redirect('auth/login');
     }
 }
