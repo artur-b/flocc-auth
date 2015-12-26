@@ -41,7 +41,7 @@
 									<i class="fa fa-btn fa-sign-in"></i>Login
 								</button>
                                 <a class="btn btn-info" href="/auth/facebook" role="button">
-                                    Login with Facebook
+                                    <i class="fa fa-btn fa-facebook"></i>Login with Facebook
                                 </a>
 							</div>
 						</div>
